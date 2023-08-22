@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Javascript moderno</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .container{
+            background-color: white;
+            height: 80vh; 
+            width: 10vh;
+            border-radius: 25px;
+            margin: 5%;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container.expanded {
+            width: 28vh;
+            transition: margin-left 0.3s ease; /* Añade una transición suave */
+        }
+        
+        .container2{
+            background-color: white;
+            margin-left: 5%;
+            height: 50vh; 
+            width: 10vh;
+           border-radius: 25px;
+            margin: 20%;
+        flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .icon-name {
+            display: none;
+            white-space: nowrap; /* Evita el salto de línea del nombre del icono */
+            overflow: hidden; /* Oculta el exceso de texto */
+            text-overflow: ellipsis; /* Agrega puntos suspensivos (...) al final del texto oculto */
+        }
+        
+        .container3{
+            background-color: white; /* Agrega un fondo blanco para los iconos */
+            border-radius: 5px; /* Ajusta el radio de las esquinas del borde */
+            padding: 5px; /* Agrega un espacio de relleno alrededor del icono */
+            margin-bottom: 10px; /* Agrega un margen inferior para separar los iconos */
+            display: flex;
+            align-items: center;
+        }
+        
+        .container3 i {
+            margin-right: 5px; /* Agrega un espacio entre el icono y el nombre */
+        }
+        
+        hr {
+            width: 80%; /* Cambia el ancho de la línea según sea necesario */
+            margin: 10px 0; /* Ajusta los márgenes según sea necesario */
+            border: none;
+            border-top: 1px solid black; /* Establece el estilo y el color de la línea */
+        }
+     
+    </style>
+    <script src="main.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+</head>
+<body bgcolor="gray">
+
+    <div class="container">
+        <i class="fa-solid fa-bars" onclick="expandContainer()"></i>
+        <hr>
+        <div class="container2">
+            <div class="container3">
+                <i class="fa-solid fa-house-chimney"></i>
+                <span class="icon-name">Casa</span>
+            </div>
+        
+            <div class="container3">
+                <i class="fa-regular fa-user"></i>
+                <span class="icon-name">Usuario</span>
+            </div>
+        
+            <div class="container3">
+                <i class="fa-regular fa-comment"></i>
+                <span class="icon-name">Comentario</span>
+            </div>
+        
+            <div class="container3">
+                <i class="fa-solid fa-camera"></i>
+                <span class="icon-name">Cámara</span>
+            </div>
+        
+            <div class="container3">
+                <i class="fa-solid fa-cog"></i>
+                <span class="icon-name">Configuración</span>
+            </div>
+        </div>
+    
+        <input type="checkbox" id="switch">
+
+        <label for="switch"></label>
+        <button onclick="getUsers()">get</button>
+        <button onclick="postUsers()">post</button>
+       
+    </div>
+
+</body>
+</html>
+
